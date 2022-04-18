@@ -1,15 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="assets/png" sizes="32x32" href="./assets/favicon-32x32.png">
     <link rel="stylesheet" href="./tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
     <script src="//unpkg.com/alpinejs" defer></script>
-    <title>FAQ Accordion</title>
+    <title>FAQ Accordion Card</title>
 </head>
-<body class="bg-slate-500 h-screen">
-    <h1 class="text-[30px]">Hello!</h1>
+
+<body class="font-kumbh">
+
+
+    <div class="h-screen flex justify-center items-center px-4 main_wrapper">
+
+
+        <img src="./assets/illustration-box-desktop.svg" alt="" class="hidden lg:block -mr-[100px] pt-16 z-50">
+        <div class="card w-[327px] lg:w-[920px] rounded-[23px] bg-white relative lg:overflow-hidden lg:mr-[91px]">
+
+
+            <img src="./assets/illustration-woman-online-desktop.svg" alt=""
+                class="hidden lg:block absolute z-30 bottom-[85px] -left-[85px]">
+            <img src="./assets/bg-pattern-desktop.svg" alt=""
+                class="hidden lg:block absolute -top-[275px] -left-[530px] z-10">
+
+
+
+            <!-- Mobile Pattern -->
+            <img src="./assets/illustration-woman-online-mobile.svg" alt=""
+                class="absolute w-[237px] left-[45px] -top-[105px] lg:hidden">
+            <img src="./assets/bg-pattern-desktop.svg" alt=""
+                class="absolute w-[240px] left-[43.5px] -top-[128px] lg:hidden">
+
+            <h1
+                class="text-[#1E1F36] text-[32px] font-bold leading-[39.69px] pb-[38px] text-center pt-[132px] lg:ml-[475px] lg:text-left lg:pt-[65px] lg:pb-[35px]">
+                FAQ
+            </h1>
+
+            <div class="px-6 pb-12 lg:ml-[475px] lg:pr-[95px] lg:pb-[83px] lg:px-0">
+
+                <!-- First question -->
+                <div x-data="{open: true}" class="flex flex-col cursor-pointer border-b border-[#E8E8EA] pb-1">
+                    <div class="flex items-start justify-between" @click="open = !open">
+                        <p class="text-[#4B4C5F] text-[13px] lg:text-[14px] leading-[16.12px] lg:leading-[17.36px] mb-3 hover:text-[#F47B56]"
+                            :class="{'font-bold': !open}">How many team members can I invite?</p>
+                        <img src="./assets/icon-arrow-down.svg" alt="" class="mt-1"
+                            :class="{'rotate-180 transition ease-out delay-100': !open}">
+                    </div>
+                    <p x-show="!open" @click.outside="open = true"
+                        class="text-[#787887] text-xs leading-[18px] pr-6 mb-3">
+                        You can invite up to 2 additional users on the Free plan. There is no limit on team members for
+                        the Premium plan.
+                    </p>
+                </div>
+
+
+                <!-- Second question -->
+                <div x-data="{open: true}"
+                    class="flex flex-col cursor-pointer border-b border-[#E8E8EA] pb-1 mt-[17px]">
+                    <div class="flex items-start justify-between" @click="open = !open">
+                        <p class="text-[#4B4C5F] text-[13px] lg:text-[14px] leading-[16.12px] lg:leading-[17.36px] mb-3 hover:text-[#F47B56]"
+                            :class="{'font-bold': !open}">What is the maximum file upload size?</p>
+                        <img src="./assets/icon-arrow-down.svg" alt="" class="mt-1"
+                            :class="{'rotate-180 transition ease-out delay-100': !open}">
+                    </div>
+                    <p x-show="!open" @click.outside="open = true"
+                        class="text-[#787887] text-xs leading-[18px] pr-6 mb-3">
+                        No more than 2GB. All files in your account must fit your allotted storage space.
+                    </p>
+                </div>
+
+
+                <!-- Third question -->
+                <div x-data="{open: true}"
+                    class="flex flex-col cursor-pointer border-b border-[#E8E8EA] pb-1 mt-[17px]">
+                    <div class="flex items-start justify-between" @click="open = !open">
+                        <p class="text-[#4B4C5F] text-[13px] lg:text-[14px] leading-[16.12px] lg:leading-[17.36px] mb-3 hover:text-[#F47B56]"
+                            :class="{'font-bold': !open}">How do I reset my password?</p>
+                        <img src="./assets/icon-arrow-down.svg" alt="" class="mt-1"
+                            :class="{'rotate-180 transition ease-out delay-100': !open}">
+                    </div>
+                    <p x-show="!open" @click.outside="open = true"
+                        class="text-[#787887] text-xs leading-[18px] pr-6 mb-3">
+                        Click “Forgot password” from the login page or “Change password” from your profile page.
+                        A reset link will be emailed to you.
+                    </p>
+                </div>
+
+
+                <!-- Fourth question -->
+                <div x-data="{open: true}"
+                    class="flex flex-col cursor-pointer border-b border-[#E8E8EA] pb-1 mt-[17px]">
+                    <div class="flex items-start justify-between" @click="open = !open">
+                        <p class="text-[#4B4C5F] text-[13px] lg:text-[14px] leading-[16.12px] lg:leading-[17.36px] mb-3 hover:text-[#F47B56]"
+                            :class="{'font-bold': !open}">Can I cancel my subscription?</p>
+                        <img src="./assets/icon-arrow-down.svg" alt="" class="mt-1"
+                            :class="{'rotate-180 transition ease-out delay-100': !open}">
+                    </div>
+                    <p x-show="!open" @click.outside="open = true"
+                        class="text-[#787887] text-xs leading-[18px] pr-6 mb-3">
+                        Yes! Send us a message and we’ll process your request no questions asked.
+                    </p>
+                </div>
+
+
+                <!-- Fifth question -->
+                <div x-data="{open: true}"
+                    class="flex flex-col cursor-pointer border-b border-[#E8E8EA] pb-1 mt-[17px]">
+                    <div class="flex items-start justify-between" @click="open = !open">
+                        <p class="text-[#4B4C5F] text-[13px] lg:text-[14px] leading-[16.12px] lg:leading-[17.36px] mb-3 hover:text-[#F47B56]"
+                            :class="{'font-bold': !open}">Do you provide additional support?</p>
+                        <img src="./assets/icon-arrow-down.svg" alt="" class="mt-1"
+                            :class="{'rotate-180 transition ease-out delay-100': !open}">
+                    </div>
+                    <p x-show="!open" @click.outside="open = true"
+                        class="text-[#787887] text-xs leading-[18px] pr-6 mb-3">
+                        Chat and email support is available 24/7. Phone lines are open during normal business hours.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

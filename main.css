@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.main_wrapper {
+    background: linear-gradient(180deg, #B068E9 0%, #6463E7 100%);
+}
+
+.card {
+    box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+}
